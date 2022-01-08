@@ -13,7 +13,14 @@
         </header>
         
         <footer th:fragment="footer">
-            <p> [[#{plantilla.pie-pagina} ]]<a href="http://www.danielav.com" target="_blank">Daniela Avendano</a></p>
+            <div>
+                <br/><!-- idiomas -->
+          
+                <a th:href="@{/(lang=es)}">ES</a> |
+                <a th:href="@{/(lang=en)}">EN</a> |
+                <span> [[#{plantilla.pie-pagina}]]<a href="http://www.danielav.com" target="_blank">Daniela Avendano</a></span>
+            </div>
+            
         </footer>
     </body>
 </html>

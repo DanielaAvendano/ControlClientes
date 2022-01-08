@@ -19,6 +19,11 @@
                 <a th:href="@{/(lang=es)}">ES</a> |
                 <a th:href="@{/(lang=en)}">EN</a> |
                 <span> [[#{plantilla.pie-pagina}]]<a href="http://www.danielav.com" target="_blank">Daniela Avendano</a></span>
+                <form method="POST" th:action="@{/logout}">
+                    
+                    <a href="#" onclick="this.parentNode.submit();">Logout</a>
+                </form>
+            
             </div>
             
         </footer>

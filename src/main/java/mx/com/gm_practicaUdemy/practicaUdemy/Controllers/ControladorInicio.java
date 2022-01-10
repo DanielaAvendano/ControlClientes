@@ -31,6 +31,12 @@ public class ControladorInicio {
         log.info("ejecutando el controlador Spring MVC");
         log.info("usuario que hizo login:"+ user);
         model.addAttribute("personas", personas);
+        var saldoTotal = 0D;
+        for(var p: personas){
+            saldoTotal += p.getSaldo();
+        }
+        model.addAttribute("saldoTotal", saldoTotal);
+        model.addAttribute("totalCliente", personas.size());
         return "index";
     }
     @GetMapping("/agregar")
@@ -54,9 +60,10 @@ public class ControladorInicio {
        return "modificar";
     }
     
-    @GetMapping("/eliminar/{idPersona}")
+    @GetMapping("/eliminar")
     public String eliminar(Persona persona){
         personaService.eliminar(persona);
         return "redirect:/";
     }
+
 }
